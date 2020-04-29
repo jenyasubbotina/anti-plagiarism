@@ -47,8 +47,8 @@ int main(int argc, char **argv)
     string c = argv[0];
     size_t idx = c.find(".");
     base_path = c.substr(0, idx);
-    WSADATA wsaData; // äëÿ èñïîëüçîâàíèÿ ws2_32.dll
-    if (!WSAStartup(MAKEWORD(2, 2), &wsaData)) // MAKEWORD(2, 2) íóæåí äëÿ èíèöèàëèçàöèè âåðñèè WS 2.2
+    WSADATA wsaData; // Ð´Ð»Ñ Ð¸ÑÐ¿Ð¾Ð»ÑŒÐ·Ð¾Ð²Ð°Ð½Ð¸Ñ ws2_32.dll
+    if (!WSAStartup(MAKEWORD(2, 2), &wsaData)) // MAKEWORD(2, 2) Ð¸Ð½Ð¸Ñ†Ð¸Ð°Ð»Ð¸Ð·Ð¸Ñ€ÑƒÐµÑ‚ Ð²ÐµÑ€ÑÐ¸ÑŽ WS 2.2
     {
         struct addrinfo* address = NULL;
         struct addrinfo hints;
@@ -109,19 +109,6 @@ int main(int argc, char **argv)
             while (getline(tstream, token, ' '))
                 tokens.push_back(token);
             string url = tokens[1];
-            /* ÓÇÍÀÒÜ, ÊÒÎ ÒÛ
-            char buffer[128];
-            gethostname(&buffer[0], 128);
-            hostent *h;
-            h = gethostbyname(&buffer[0]);
-            if (h != NULL)
-            {
-                char *LocalIp = new char[15];
-                sprintf(LocalIp, "%d.%d.%d.%d", (unsigned char)h->h_addr_list[0][0],
-                        (unsigned char)h->h_addr_list[0][1], (unsigned char)h->h_addr_list[0][2],
-                        (unsigned char)h->h_addr_list[0][3]);
-            }
-            */
             stringstream response;
             stringstream response_body;
 
@@ -145,7 +132,7 @@ int main(int argc, char **argv)
                               response.str().length(), 0);
                 if (result == SOCKET_ERROR)
                 {
-                    cerr << "Íå óäàëîñü îòïðàâèòü îòâåò" << '\n';
+                    cerr << "ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð¾Ñ‚Ð¿Ñ€Ð°Ð²Ð¸Ñ‚ÑŒ Ð¾Ñ‚Ð²ÐµÑ‚" << '\n';
                 }
                 closesocket(client_socket);
             }
