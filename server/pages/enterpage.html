@@ -1,0 +1,15 @@
+﻿<html>
+	<head>
+		<link rel="icon" href="data:,">
+	</head>
+	<body>
+		<textarea id="codeField" rows=30 style="width: 100%; display:inline-block;"> Вставьте сюда ваш код </textarea>
+		<button type="button" onClick="sendCode()">send</button>
+		<script>
+			function sendCode()
+			{
+				location.href += "send/" + encodeURIComponent(document.getElementById("codeField").value);
+			}
+		</script>
+	</body>
+</html>
