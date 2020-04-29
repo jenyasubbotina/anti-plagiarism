@@ -1,5 +1,5 @@
 # anti-plagiarism
-Зайдите в папку server и выберите файл runServer.cpp                                                                                       
+Зайдите в папку server и выберите файл main.cpp                                                                                       
 После того, как вы открыли его в своей IDE, нажмите            
 Settings -> Compiler -> Linker settings -> Add -> Find -> Open Explorer -> libws2_32.a                                                      
 Если у вас не получилось ее найти в проводнике, откройте папку Program Files и найдите там свою IDE.      
